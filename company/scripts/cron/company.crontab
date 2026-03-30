@@ -11,6 +11,8 @@ PYTHON_BIN=/usr/bin/python3
 20 8 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-news.sh morning >> /Users/seren/workspace/random/company/logs/news.log 2>&1
 25 8 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-chart.sh morning >> /Users/seren/workspace/random/company/logs/chart.log 2>&1
 27 8 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-fundamental.sh morning >> /Users/seren/workspace/random/company/logs/fundamental.log 2>&1
+28 8 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-pipeline.sh morning >> /Users/seren/workspace/random/company/logs/pipeline.log 2>&1
+29 8 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-global.sh morning >> /Users/seren/workspace/random/company/logs/global.log 2>&1
 30 8 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-strategy.sh morning >> /Users/seren/workspace/random/company/logs/strategy.log 2>&1
 50 8 * * 1-5 /Users/seren/workspace/random/company/scripts/ceo/run-morning.sh >> /Users/seren/workspace/random/company/logs/ceo.log 2>&1
 
@@ -19,6 +21,8 @@ PYTHON_BIN=/usr/bin/python3
 10 15 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-news.sh afternoon >> /Users/seren/workspace/random/company/logs/news.log 2>&1
 15 15 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-chart.sh afternoon >> /Users/seren/workspace/random/company/logs/chart.log 2>&1
 17 15 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-fundamental.sh afternoon >> /Users/seren/workspace/random/company/logs/fundamental.log 2>&1
+18 15 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-pipeline.sh afternoon >> /Users/seren/workspace/random/company/logs/pipeline.log 2>&1
+19 15 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-global.sh afternoon >> /Users/seren/workspace/random/company/logs/global.log 2>&1
 20 15 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-strategy.sh afternoon >> /Users/seren/workspace/random/company/logs/strategy.log 2>&1
 5 16 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-bookkeeper.sh afternoon >> /Users/seren/workspace/random/company/logs/bookkeeper.log 2>&1
 30 16 * * 1-5 /Users/seren/workspace/random/company/scripts/ceo/run-afternoon.sh >> /Users/seren/workspace/random/company/logs/ceo.log 2>&1

@@ -14,8 +14,12 @@ PROMPT_PATH="$COMPANY_DIR/state/ceo-afternoon-prompt.txt"
 "$SCRIPT_DIR/employees/run-news.sh" afternoon
 "$SCRIPT_DIR/refresh-watchlist-quotes.sh"
 "$SCRIPT_DIR/refresh-watchlist-fundamentals.sh"
+"$SCRIPT_DIR/refresh-pipeline-context.sh"
+"$SCRIPT_DIR/refresh-global-context.sh"
 "$SCRIPT_DIR/employees/run-chart.sh" afternoon
 "$SCRIPT_DIR/employees/run-fundamental.sh" afternoon
+"$SCRIPT_DIR/employees/run-pipeline.sh" afternoon
+"$SCRIPT_DIR/employees/run-global.sh" afternoon
 "$SCRIPT_DIR/employees/run-strategy.sh" afternoon
 "$SCRIPT_DIR/employees/run-bookkeeper.sh" afternoon
 
@@ -39,6 +43,12 @@ $(cat "$COMPANY_DIR/employees/strategy/latest.md")
 
 기업분석 담당 결과:
 $(cat "$COMPANY_DIR/employees/fundamental/latest.md")
+
+파이프라인 담당 결과:
+$(cat "$COMPANY_DIR/employees/pipeline/latest.md")
+
+해외 사례 담당 결과:
+$(cat "$COMPANY_DIR/employees/global/latest.md")
 
 장부 담당 결과:
 $(cat "$COMPANY_DIR/employees/bookkeeper/latest.md")

@@ -26,7 +26,9 @@ Quick start:
 6. Run `company/scripts/quote.sh '셀트리온' 'HLB펩'` when you want on-demand price and volume data.
 7. Or run `company/scripts/refresh-watchlist-quotes.sh` to auto-build a watchlist from news and fetch quotes.
 8. Run `company/scripts/refresh-watchlist-fundamentals.sh` to fetch market cap and basic financials for watchlist names.
-9. Point GitHub Pages at `company/output/` after committing to a repository.
+9. Run `company/scripts/refresh-pipeline-context.sh` to build next-milestone and pipeline-risk notes.
+10. Run `company/scripts/refresh-global-context.sh` to collect global biotech precedent headlines.
+11. Point GitHub Pages at `company/output/` after committing to a repository.
 
 Publication behavior:
 - `company/scripts/ceo/run-morning.sh` auto-commits and pushes refreshed report artifacts after a successful run.

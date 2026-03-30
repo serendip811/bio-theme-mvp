@@ -21,6 +21,8 @@ SOURCE_NOTES_PATH="$COMPANY_DIR/reports/input/daily-source-notes.md"
 MARKET_SNAPSHOT_PATH="$COMPANY_DIR/reports/input/market-snapshot.md"
 WATCHLIST_PATH="$COMPANY_DIR/reports/input/watchlist.md"
 FUNDAMENTALS_PATH="$COMPANY_DIR/reports/input/fundamentals.md"
+PIPELINE_CONTEXT_PATH="$COMPANY_DIR/reports/input/pipeline-context.md"
+GLOBAL_CONTEXT_PATH="$COMPANY_DIR/reports/input/global-context.md"
 
 with_lock "$EMPLOYEE"
 
@@ -53,6 +55,12 @@ $(cat "$WATCHLIST_PATH")
 
 기업 기초체력:
 $(cat "$FUNDAMENTALS_PATH")
+
+파이프라인 컨텍스트:
+$(cat "$PIPELINE_CONTEXT_PATH")
+
+해외 사례 컨텍스트:
+$(cat "$GLOBAL_CONTEXT_PATH")
 
 참고 장부 요약:
 $(cat "$COMPANY_DIR/portfolio/performance.json")
