@@ -98,8 +98,7 @@ publish_reports() {
     company/employees/*/latest.md \
     company/state/ceo.json \
     company/state/employees/*.json \
-    company/portfolio/*.json \
-    company/portfolio/*.csv
+    company/portfolio/*.json
 
   if [ -z "$(git -C "$ROOT_DIR" status --short)" ]; then
     return 0
