@@ -24,38 +24,48 @@ def load_json(path: Path, default):
 
 def md_to_html(text: str) -> str:
     blocks = []
-    in_list = False
+    list_stack = []
+
+    def close_lists(target_depth=0):
+        while len(list_stack) > target_depth:
+            blocks.append("</ul>")
+            list_stack.pop()
+
     for raw_line in text.splitlines():
         line = raw_line.rstrip()
         if not line:
-            if in_list:
-                blocks.append("</ul>")
-                in_list = False
+            close_lists(0)
             continue
         escaped = html.escape(line)
         if line.startswith("# "):
-            if in_list:
-                blocks.append("</ul>")
-                in_list = False
+            close_lists(0)
             blocks.append(f"<h1>{html.escape(line[2:])}</h1>")
         elif line.startswith("## "):
-            if in_list:
-                blocks.append("</ul>")
-                in_list = False
+            close_lists(0)
             blocks.append(f"<h2>{html.escape(line[3:])}</h2>")
-        elif line.startswith("- "):
-            if not in_list:
-                blocks.append("<ul>")
-                in_list = True
-            blocks.append(f"<li>{html.escape(line[2:])}</li>")
+        elif re_fullmatch_bold_heading(line := line):
+            close_lists(0)
+            blocks.append(f"<h3>{html.escape(line[2:-2])}</h3>")
+        elif line.lstrip().startswith("- "):
+            indent = (len(line) - len(line.lstrip(" "))) // 2
+            if indent == 0:
+                while len(list_stack) <= indent:
+                    blocks.append("<ul>")
+                    list_stack.append(True)
+                close_lists(indent + 1)
+                blocks.append(f"<li>{html.escape(line.lstrip()[2:])}</li>")
+            else:
+                close_lists(0)
+                blocks.append(f"<p class=\"subitem\">{html.escape(line.lstrip()[2:])}</p>")
         else:
-            if in_list:
-                blocks.append("</ul>")
-                in_list = False
+            close_lists(0)
             blocks.append(f"<p>{escaped}</p>")
-    if in_list:
-        blocks.append("</ul>")
+    close_lists(0)
     return "\n".join(blocks)
+
+
+def re_fullmatch_bold_heading(line: str) -> bool:
+    return line.startswith("**") and line.endswith("**") and line.count("**") == 2 and len(line) > 4
 
 
 def page(title: str, body: str, stylesheet_href: str) -> str:

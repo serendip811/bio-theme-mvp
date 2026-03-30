@@ -51,6 +51,11 @@ th {
   line-height: 1.6;
 }
 
+.subitem {
+  margin: 6px 0 10px 18px;
+  color: var(--muted);
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));

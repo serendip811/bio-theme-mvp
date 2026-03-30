@@ -13,10 +13,12 @@ SOURCE_NOTES_PATH = INPUT_DIR / "daily-source-notes.md"
 WATCHLIST_JSON_PATH = INPUT_DIR / "watchlist.json"
 WATCHLIST_MD_PATH = INPUT_DIR / "watchlist.md"
 CORP_LIST_URL = "https://kind.krx.co.kr/corpgeneral/corpList.do?method=download&searchType=13"
+NAVER_URL = "https://finance.naver.com/item/main.naver?code={code}"
 USER_AGENT = "Mozilla/5.0 (compatible; BioThemeMVP/1.0)"
 KST = timezone(timedelta(hours=9))
 BIO_HINTS = ("바이오", "제약", "헬스", "의약", "의료", "진단", "세포", "백신", "펩")
 IGNORE_NAMES = {"한국바이오의약품협회", "식약처", "FDA", "K바이오"}
+CATALYST_KEYWORDS = ("임상", "승인", "허가", "계약", "기술수출", "CDMO", "ADC", "비만", "최대주주", "유상증자", "CB", "BW")
 
 
 def fetch_text(url: str, encoding: str) -> str:
@@ -53,19 +55,80 @@ def load_symbols():
     return rows
 
 
-def score_symbol(symbol, text_blocks):
+def fetch_quote_html(code: str) -> str:
+    req = urllib.request.Request(NAVER_URL.format(code=code), headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        return resp.read().decode("utf-8", "ignore")
+
+
+def extract_number(pattern: str, text: str):
+    match = re.search(pattern, text, re.S)
+    if not match:
+        return None
+    return int(match.group(1).replace(",", ""))
+
+
+def load_quote_summary(code: str):
+    try:
+        html = fetch_quote_html(code)
+    except Exception:
+        return {"market_cap_okr": None, "trading_value_million_krw": None}
+    return {
+        "market_cap_okr": extract_number(r"시가총액\(억\)</span></th>.*?<td>([0-9,]+)</td>", html),
+        "trading_value_million_krw": extract_number(r"거래대금\s*([0-9,]+)백만</dd>", html),
+    }
+
+
+def count_mentions(name: str, text: str) -> int:
+    pattern = rf"(?<![가-힣A-Za-z0-9]){re.escape(name)}(?![가-힣A-Za-z0-9])"
+    return len(re.findall(pattern, text))
+
+
+def score_symbol(symbol, text_blocks, catalyst_text, quote_summary):
     name = symbol["name"]
     if name in IGNORE_NAMES:
         return 0
     score = 0
     reasons = []
     for label, text, weight in text_blocks:
-        count = text.count(name)
+        count = count_mentions(name, text)
         if count:
             score += count * weight
             reasons.append(f"{label} {count}회")
-    if any(hint in name for hint in ("셀트리온", "HLB", "차백신", "알테오젠", "리가켐", "한미")):
-        score += 1
+
+    catalyst_hits = 0
+    for keyword in CATALYST_KEYWORDS:
+        if re.search(rf"{re.escape(name)}.*{re.escape(keyword)}|{re.escape(keyword)}.*{re.escape(name)}", catalyst_text):
+            catalyst_hits += 1
+    if catalyst_hits:
+        score += catalyst_hits * 4
+        reasons.append(f"직접 재료 {catalyst_hits}개")
+
+    sector = symbol.get("sector", "")
+    if any(hint in sector for hint in BIO_HINTS):
+        score += 2
+        reasons.append("바이오 업종")
+
+    trading_value = quote_summary.get("trading_value_million_krw")
+    if trading_value is not None:
+        if trading_value >= 50000:
+            score += 5
+            reasons.append("거래대금 상위")
+        elif trading_value >= 10000:
+            score += 3
+            reasons.append("거래대금 유의미")
+        elif trading_value >= 1000:
+            score += 1
+
+    market_cap = quote_summary.get("market_cap_okr")
+    if market_cap is not None:
+        if 3000 <= market_cap <= 200000:
+            score += 2
+            reasons.append("시총 적정")
+        elif market_cap < 500:
+            score -= 2
+            reasons.append("초소형 경계")
+
     return score, reasons
 
 
@@ -75,17 +138,29 @@ def main():
     notes_text = SOURCE_NOTES_PATH.read_text(encoding="utf-8") if SOURCE_NOTES_PATH.exists() else ""
     symbols = load_symbols()
     text_blocks = [("뉴스 브리핑", news_text, 3), ("소스 노트", notes_text, 2)]
+    catalyst_text = f"{news_text}\n{notes_text}"
 
     ranked = []
     for symbol in symbols:
-        scored = score_symbol(symbol, text_blocks)
+        mentions = count_mentions(symbol["name"], catalyst_text)
+        if mentions == 0:
+            continue
+        quote_summary = load_quote_summary(symbol["code"])
+        scored = score_symbol(symbol, text_blocks, catalyst_text, quote_summary)
         if isinstance(scored, tuple):
             score, reasons = scored
         else:
             score, reasons = 0, []
         if score <= 0:
             continue
-        ranked.append({"name": symbol["name"], "code": symbol["code"], "score": score, "reasons": reasons})
+        ranked.append({
+            "name": symbol["name"],
+            "code": symbol["code"],
+            "score": score,
+            "reasons": reasons,
+            "market_cap_okr": quote_summary.get("market_cap_okr"),
+            "trading_value_million_krw": quote_summary.get("trading_value_million_krw"),
+        })
 
     ranked.sort(key=lambda item: (item["score"], item["name"]), reverse=True)
     selected = ranked[:5]
@@ -105,7 +180,9 @@ def main():
     ]
     if selected:
         for item in selected:
-            lines.append(f"- {item['name']} ({item['code']}): 점수 {item['score']} | 근거: {', '.join(item['reasons'])}")
+            market_cap = f", 시총 {item['market_cap_okr']:,}억" if item.get("market_cap_okr") is not None else ""
+            trading_value = f", 거래대금 {item['trading_value_million_krw']:,}백만" if item.get("trading_value_million_krw") is not None else ""
+            lines.append(f"- {item['name']} ({item['code']}): 점수 {item['score']} | 근거: {', '.join(item['reasons'])}{market_cap}{trading_value}")
     else:
         lines.append("- 감시 종목 없음")
     WATCHLIST_MD_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")

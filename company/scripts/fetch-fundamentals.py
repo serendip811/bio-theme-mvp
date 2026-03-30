@@ -10,11 +10,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 INPUT_DIR = ROOT / "reports" / "input"
 WATCHLIST_PATH = INPUT_DIR / "watchlist.json"
+SOURCE_NOTES_PATH = INPUT_DIR / "daily-source-notes.md"
+NEWS_PATH = ROOT / "employees" / "news" / "latest.md"
 OUTPUT_JSON = INPUT_DIR / "fundamentals.json"
 OUTPUT_MD = INPUT_DIR / "fundamentals.md"
 NAVER_URL = "https://finance.naver.com/item/main.naver?code={code}"
 USER_AGENT = "Mozilla/5.0 (compatible; BioThemeMVP/1.0)"
 KST = timezone(timedelta(hours=9))
+FINANCING_KEYWORDS = ("유상증자", "CB", "BW", "전환사채", "신주인수권부사채", "자금조달")
+
+
+def strip_urls(text: str) -> str:
+    return re.sub(r"https?://\S+", "", text)
 
 
 def fetch_html(code: str) -> str:
@@ -166,6 +173,8 @@ def parse_company(code: str):
         "financial_strength": financial_strength,
         "interpretation_flags": interpretation,
         "cash_like_assets_okr": None,
+        "debt_total_okr": None,
+        "financing_risk_flags": [],
         "source_url": NAVER_URL.format(code=code),
     }
 
@@ -199,6 +208,8 @@ def build_markdown(items, updated_at: str):
             f"- PER / PBR: {format_num(item['per'])} / {format_num(item['pbr'])}",
             f"- 최근 분기({item['latest_quarter_label'] or '기준 미상'}) 매출 / 영업이익 / 순이익: {format_num(item['sales_okr'], '억')} / {format_num(item['operating_income_okr'], '억')} / {format_num(item['net_income_okr'], '억')}",
             f"- 현금성자산: {format_num(item['cash_like_assets_okr'], '억')}",
+            f"- 총차입금: {format_num(item['debt_total_okr'], '억')}",
+            f"- 자금조달/희석 리스크: {', '.join(item['financing_risk_flags']) if item['financing_risk_flags'] else '데이터 미입력'}",
             f"- 재무 메모: {', '.join(item['financial_strength']) if item['financial_strength'] else '데이터 미입력'}",
             f"- 해석 플래그: {', '.join(item['interpretation_flags']) if item['interpretation_flags'] else '데이터 미입력'}",
             f"- 링크: {item['source_url']}",
@@ -210,16 +221,20 @@ def build_markdown(items, updated_at: str):
 def main():
     INPUT_DIR.mkdir(parents=True, exist_ok=True)
     watchlist = json.loads(WATCHLIST_PATH.read_text(encoding="utf-8")) if WATCHLIST_PATH.exists() else {"items": []}
+    source_text = SOURCE_NOTES_PATH.read_text(encoding="utf-8") if SOURCE_NOTES_PATH.exists() else ""
+    news_text = NEWS_PATH.read_text(encoding="utf-8") if NEWS_PATH.exists() else ""
+    combined_text = strip_urls(f"{source_text}\n{news_text}")
     items = []
     for row in watchlist.get("items", []):
         code = row.get("code")
+        name = row.get("name", code)
         if not code:
             continue
         try:
-            items.append(parse_company(code))
+            parsed = parse_company(code)
         except Exception:
-            items.append({
-                "name": row.get("name", code),
+            parsed = {
+                "name": name,
                 "code": code,
                 "market_cap_okr": None,
                 "listed_shares": None,
@@ -236,8 +251,23 @@ def main():
                 "financial_strength": [],
                 "interpretation_flags": ["기초체력 데이터 파싱 실패"],
                 "cash_like_assets_okr": None,
+                "debt_total_okr": None,
+                "financing_risk_flags": [],
                 "source_url": NAVER_URL.format(code=code),
-            })
+            }
+
+        financing_hits = []
+        for keyword in FINANCING_KEYWORDS:
+            if keyword in {"CB", "BW"}:
+                pattern = rf"{re.escape(name)}.*(?<![A-Za-z]){re.escape(keyword)}(?![A-Za-z])|(?<![A-Za-z]){re.escape(keyword)}(?![A-Za-z]).*{re.escape(name)}"
+            else:
+                pattern = rf"{re.escape(name)}.*{re.escape(keyword)}|{re.escape(keyword)}.*{re.escape(name)}"
+            if re.search(pattern, combined_text):
+                financing_hits.append(keyword)
+        parsed["financing_risk_flags"] = financing_hits
+        if financing_hits:
+            parsed["interpretation_flags"] = parsed.get("interpretation_flags", []) + ["최근 자금조달 키워드 확인"]
+        items.append(parsed)
 
     updated_at = datetime.now(KST).isoformat(timespec="seconds")
     OUTPUT_JSON.write_text(json.dumps({"updated_at": updated_at, "items": items}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

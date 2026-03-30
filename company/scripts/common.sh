@@ -89,7 +89,17 @@ publish_reports() {
     return 0
   fi
 
-  git -C "$ROOT_DIR" add company
+  git -C "$ROOT_DIR" add \
+    company/output \
+    company/reports/input \
+    company/reports/raw \
+    company/reports/morning \
+    company/reports/afternoon \
+    company/employees/*/latest.md \
+    company/state/ceo.json \
+    company/state/employees/*.json \
+    company/portfolio/*.json \
+    company/portfolio/*.csv
 
   if [ -z "$(git -C "$ROOT_DIR" status --short)" ]; then
     return 0

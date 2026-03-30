@@ -1,22 +1,6 @@
 {
-  "updated_at": "2026-03-30T19:37:37+09:00",
+  "updated_at": "2026-03-30T21:41:29+09:00",
   "items": [
-    {
-      "name": "HLB",
-      "code": "028300",
-      "current_price": 53500,
-      "previous_close": 53300,
-      "change": 200,
-      "change_direction": "상승",
-      "change_rate": 0.38,
-      "open": 56600,
-      "high": 56600,
-      "low": 52600,
-      "gap_rate": 6.19,
-      "volume": 1143717,
-      "trading_value_million_krw": 62018,
-      "source_url": "https://finance.naver.com/item/main.naver?code=028300"
-    },
     {
       "name": "셀트리온",
       "code": "068270",
@@ -64,6 +48,22 @@
       "volume": 4339922,
       "trading_value_million_krw": 16946,
       "source_url": "https://finance.naver.com/item/main.naver?code=261780"
+    },
+    {
+      "name": "HLB",
+      "code": "028300",
+      "current_price": 53500,
+      "previous_close": 53300,
+      "change": 200,
+      "change_direction": "상승",
+      "change_rate": 0.38,
+      "open": 56600,
+      "high": 56600,
+      "low": 52600,
+      "gap_rate": 6.19,
+      "volume": 1143717,
+      "trading_value_million_krw": 62018,
+      "source_url": "https://finance.naver.com/item/main.naver?code=028300"
     },
     {
       "name": "한미약품",
