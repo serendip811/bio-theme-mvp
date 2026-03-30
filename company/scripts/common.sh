@@ -79,3 +79,22 @@ notify_discord() {
   payload="$($PYTHON_BIN -c 'import json,sys; print(json.dumps({"content": sys.argv[1]}))' "$message")"
   curl -fsS -X POST "$DISCORD_WEBHOOK_URL" -H "Content-Type: application/json" -d "$payload" >/dev/null
 }
+
+publish_reports() {
+  local report_kind="$1"
+  local report_date="$2"
+  local commit_message="Publish ${report_kind} report ${report_date}"
+
+  if ! git -C "$ROOT_DIR" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    return 0
+  fi
+
+  git -C "$ROOT_DIR" add company
+
+  if [ -z "$(git -C "$ROOT_DIR" status --short)" ]; then
+    return 0
+  fi
+
+  git -C "$ROOT_DIR" commit -m "$commit_message"
+  git -C "$ROOT_DIR" push
+}

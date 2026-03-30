@@ -75,6 +75,7 @@ EOF
 if "$CODEX_BIN" exec --skip-git-repo-check -C "$ROOT_DIR" --full-auto -o "$REPORT_PATH" - < "$PROMPT_PATH"; then
   ceo_state_write "morning" "success" ""
   "$PYTHON_BIN" "$COMPANY_DIR/scripts/build-pages.py" --date "$DATE_STR"
+  publish_reports "morning" "$DATE_STR"
   notify_discord "[오전 보고 완료] ${DATE_STR} 오전 보고와 포트폴리오 페이지를 갱신했습니다."
 else
   ceo_state_write "morning" "failed" "codex exec failed"

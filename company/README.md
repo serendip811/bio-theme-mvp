@@ -28,6 +28,11 @@ Quick start:
 8. Run `company/scripts/refresh-watchlist-fundamentals.sh` to fetch market cap and basic financials for watchlist names.
 9. Point GitHub Pages at `company/output/` after committing to a repository.
 
+Publication behavior:
+- `company/scripts/ceo/run-morning.sh` auto-commits and pushes refreshed report artifacts after a successful run.
+- `company/scripts/ceo/run-afternoon.sh` does the same for the afternoon cycle.
+- GitHub Pages then redeploys automatically from the pushed commit.
+
 Ledger update example:
 
 ```bash
