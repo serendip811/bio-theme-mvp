@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-30T13:18:40+09:00",
+  "updated_at": "2026-03-30T13:23:26+09:00",
   "items": [
     {
       "name": "셀트리온",
@@ -33,7 +33,7 @@
     {
       "name": "HLB",
       "code": "028300",
-      "market_cap_okr": 72415.0,
+      "market_cap_okr": 72282.0,
       "listed_shares": 133117504.0,
       "foreign_ratio": 19.28,
       "debt_ratio": 55.34,
@@ -57,34 +57,6 @@
       ],
       "cash_like_assets_okr": null,
       "source_url": "https://finance.naver.com/item/main.naver?code=028300"
-    },
-    {
-      "name": "차백신연구소",
-      "code": "261780",
-      "market_cap_okr": 984.0,
-      "listed_shares": 26865246.0,
-      "foreign_ratio": null,
-      "debt_ratio": 151.13,
-      "quick_ratio": 163.56,
-      "reserve_ratio": -15.4,
-      "per": -4.73,
-      "pbr": 6.4,
-      "sales_okr": 2.0,
-      "operating_income_okr": -54.0,
-      "net_income_okr": -59.0,
-      "latest_quarter_label": "2025.06",
-      "financial_strength": [
-        "매출 2억",
-        "영업이익 -54억",
-        "순이익 -59억"
-      ],
-      "interpretation_flags": [
-        "영업적자 상태",
-        "고PBR 구간",
-        "부채비율 경계"
-      ],
-      "cash_like_assets_okr": null,
-      "source_url": "https://finance.naver.com/item/main.naver?code=261780"
     },
     {
       "name": "HLB펩",
@@ -114,9 +86,37 @@
       "source_url": "https://finance.naver.com/item/main.naver?code=196300"
     },
     {
+      "name": "차백신연구소",
+      "code": "261780",
+      "market_cap_okr": 992.0,
+      "listed_shares": 26865246.0,
+      "foreign_ratio": null,
+      "debt_ratio": 151.13,
+      "quick_ratio": 163.56,
+      "reserve_ratio": -15.4,
+      "per": -4.73,
+      "pbr": 6.4,
+      "sales_okr": 2.0,
+      "operating_income_okr": -54.0,
+      "net_income_okr": -59.0,
+      "latest_quarter_label": "2025.06",
+      "financial_strength": [
+        "매출 2억",
+        "영업이익 -54억",
+        "순이익 -59억"
+      ],
+      "interpretation_flags": [
+        "영업적자 상태",
+        "고PBR 구간",
+        "부채비율 경계"
+      ],
+      "cash_like_assets_okr": null,
+      "source_url": "https://finance.naver.com/item/main.naver?code=261780"
+    },
+    {
       "name": "한미약품",
       "code": "128940",
-      "market_cap_okr": 66104.0,
+      "market_cap_okr": 66489.0,
       "listed_shares": 12810991.0,
       "foreign_ratio": 14.28,
       "debt_ratio": 51.63,
