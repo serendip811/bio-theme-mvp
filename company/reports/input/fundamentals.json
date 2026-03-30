@@ -1,0 +1,146 @@
+{
+  "updated_at": "2026-03-30T13:18:40+09:00",
+  "items": [
+    {
+      "name": "셀트리온",
+      "code": "068270",
+      "market_cap_okr": 467872.0,
+      "listed_shares": 231048261.0,
+      "foreign_ratio": 23.38,
+      "debt_ratio": 28.71,
+      "quick_ratio": 72.29,
+      "reserve_ratio": 7780.03,
+      "per": 161.28,
+      "pbr": 2.3,
+      "sales_okr": 13302.0,
+      "operating_income_okr": 4752.0,
+      "net_income_okr": 5279.0,
+      "latest_quarter_label": "2025.12",
+      "financial_strength": [
+        "매출 13,302억",
+        "영업이익 4,752억",
+        "순이익 5,279억"
+      ],
+      "interpretation_flags": [
+        "영업흑자 기반",
+        "고PER 구간",
+        "대형주 체급",
+        "유동성 보수 확인 필요"
+      ],
+      "cash_like_assets_okr": null,
+      "source_url": "https://finance.naver.com/item/main.naver?code=068270"
+    },
+    {
+      "name": "HLB",
+      "code": "028300",
+      "market_cap_okr": 72415.0,
+      "listed_shares": 133117504.0,
+      "foreign_ratio": 19.28,
+      "debt_ratio": 55.34,
+      "quick_ratio": 57.38,
+      "reserve_ratio": 773.92,
+      "per": -22.66,
+      "pbr": 13.2,
+      "sales_okr": 221.0,
+      "operating_income_okr": -230.0,
+      "net_income_okr": -764.0,
+      "latest_quarter_label": "2025.09",
+      "financial_strength": [
+        "매출 221억",
+        "영업이익 -230억",
+        "순이익 -764억"
+      ],
+      "interpretation_flags": [
+        "영업적자 상태",
+        "고PBR 구간",
+        "유동성 보수 확인 필요"
+      ],
+      "cash_like_assets_okr": null,
+      "source_url": "https://finance.naver.com/item/main.naver?code=028300"
+    },
+    {
+      "name": "차백신연구소",
+      "code": "261780",
+      "market_cap_okr": 984.0,
+      "listed_shares": 26865246.0,
+      "foreign_ratio": null,
+      "debt_ratio": 151.13,
+      "quick_ratio": 163.56,
+      "reserve_ratio": -15.4,
+      "per": -4.73,
+      "pbr": 6.4,
+      "sales_okr": 2.0,
+      "operating_income_okr": -54.0,
+      "net_income_okr": -59.0,
+      "latest_quarter_label": "2025.06",
+      "financial_strength": [
+        "매출 2억",
+        "영업이익 -54억",
+        "순이익 -59억"
+      ],
+      "interpretation_flags": [
+        "영업적자 상태",
+        "고PBR 구간",
+        "부채비율 경계"
+      ],
+      "cash_like_assets_okr": null,
+      "source_url": "https://finance.naver.com/item/main.naver?code=261780"
+    },
+    {
+      "name": "HLB펩",
+      "code": "196300",
+      "market_cap_okr": 677.0,
+      "listed_shares": 9293398.0,
+      "foreign_ratio": 2.0,
+      "debt_ratio": 144.7,
+      "quick_ratio": 120.91,
+      "reserve_ratio": 360.82,
+      "per": -9.15,
+      "pbr": 2.88,
+      "sales_okr": 12.0,
+      "operating_income_okr": -14.0,
+      "net_income_okr": -21.0,
+      "latest_quarter_label": "2025.09",
+      "financial_strength": [
+        "매출 12억",
+        "영업이익 -14억",
+        "순이익 -21억"
+      ],
+      "interpretation_flags": [
+        "영업적자 상태",
+        "부채비율 경계"
+      ],
+      "cash_like_assets_okr": null,
+      "source_url": "https://finance.naver.com/item/main.naver?code=196300"
+    },
+    {
+      "name": "한미약품",
+      "code": "128940",
+      "market_cap_okr": 66104.0,
+      "listed_shares": 12810991.0,
+      "foreign_ratio": 14.28,
+      "debt_ratio": 51.63,
+      "quick_ratio": 74.52,
+      "reserve_ratio": 3749.87,
+      "per": 141.36,
+      "pbr": 4.98,
+      "sales_okr": 3623.0,
+      "operating_income_okr": 551.0,
+      "net_income_okr": 454.0,
+      "latest_quarter_label": "2025.09",
+      "financial_strength": [
+        "매출 3,623억",
+        "영업이익 551억",
+        "순이익 454억"
+      ],
+      "interpretation_flags": [
+        "영업흑자 기반",
+        "고PER 구간",
+        "고PBR 구간",
+        "유동성 보수 확인 필요"
+      ],
+      "cash_like_assets_okr": null,
+      "source_url": "https://finance.naver.com/item/main.naver?code=128940"
+    }
+  ]
+}

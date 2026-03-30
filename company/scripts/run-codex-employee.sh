@@ -20,6 +20,7 @@ PROMPT_PATH="$COMPANY_DIR/state/${EMPLOYEE}-${SHIFT}-prompt.txt"
 SOURCE_NOTES_PATH="$COMPANY_DIR/reports/input/daily-source-notes.md"
 MARKET_SNAPSHOT_PATH="$COMPANY_DIR/reports/input/market-snapshot.md"
 WATCHLIST_PATH="$COMPANY_DIR/reports/input/watchlist.md"
+FUNDAMENTALS_PATH="$COMPANY_DIR/reports/input/fundamentals.md"
 
 with_lock "$EMPLOYEE"
 
@@ -49,6 +50,9 @@ $(cat "$MARKET_SNAPSHOT_PATH")
 
 감시 종목:
 $(cat "$WATCHLIST_PATH")
+
+기업 기초체력:
+$(cat "$FUNDAMENTALS_PATH")
 
 참고 장부 요약:
 $(cat "$COMPANY_DIR/portfolio/performance.json")

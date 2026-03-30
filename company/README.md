@@ -25,7 +25,8 @@ Quick start:
 5. Run `company/scripts/ceo/run-morning.sh` or `company/scripts/ceo/run-afternoon.sh`.
 6. Run `company/scripts/quote.sh '셀트리온' 'HLB펩'` when you want on-demand price and volume data.
 7. Or run `company/scripts/refresh-watchlist-quotes.sh` to auto-build a watchlist from news and fetch quotes.
-8. Point GitHub Pages at `company/output/` after committing to a repository.
+8. Run `company/scripts/refresh-watchlist-fundamentals.sh` to fetch market cap and basic financials for watchlist names.
+9. Point GitHub Pages at `company/output/` after committing to a repository.
 
 Ledger update example:
 

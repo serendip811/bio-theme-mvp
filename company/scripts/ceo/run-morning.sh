@@ -13,7 +13,9 @@ PROMPT_PATH="$COMPANY_DIR/state/ceo-morning-prompt.txt"
 "$SCRIPT_DIR/refresh-source-notes.sh"
 "$SCRIPT_DIR/employees/run-news.sh" morning
 "$SCRIPT_DIR/refresh-watchlist-quotes.sh"
+"$SCRIPT_DIR/refresh-watchlist-fundamentals.sh"
 "$SCRIPT_DIR/employees/run-chart.sh" morning
+"$SCRIPT_DIR/employees/run-fundamental.sh" morning
 "$SCRIPT_DIR/employees/run-strategy.sh" morning
 
 cat > "$PROMPT_PATH" <<EOF
@@ -34,6 +36,9 @@ $(cat "$COMPANY_DIR/employees/chart/latest.md")
 전략 담당 결과:
 $(cat "$COMPANY_DIR/employees/strategy/latest.md")
 
+기업분석 담당 결과:
+$(cat "$COMPANY_DIR/employees/fundamental/latest.md")
+
 시장 스냅샷:
 $(cat "$COMPANY_DIR/reports/input/market-snapshot.md")
 
@@ -49,6 +54,7 @@ $(cat "$COMPANY_DIR/portfolio/performance.json")
 - 매수 후보 / 관찰 후보 / 추격 금지 구분
 - 전일 대비 포트폴리오 요약
 - 직전 종가 대비 시가 갭과 거래대금 해석
+- 기업 체력이나 밸류에이션 한 줄 코멘트
 
 추가 제약:
 - 라이브 웹 검색을 하지 않는다.
