@@ -1,0 +1,7 @@
+#!/bin/bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/common.sh"
+
+"$PYTHON_BIN" "$COMPANY_DIR/scripts/collect-news.py"

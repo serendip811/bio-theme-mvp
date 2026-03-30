@@ -20,8 +20,11 @@ Main directories:
 Quick start:
 1. Export `DISCORD_WEBHOOK_URL` in your shell or cron environment.
 2. Review role prompts in `company/employees/` and `company/ceo/`.
-3. Run `company/scripts/ceo/run-morning.sh` or `company/scripts/ceo/run-afternoon.sh`.
-4. Point GitHub Pages at `company/output/` after committing to a repository.
+3. Optionally add manual notes to `company/reports/input/manual-notes.md`.
+4. Run `company/scripts/refresh-source-notes.sh` to collect live web news.
+5. Run `company/scripts/ceo/run-morning.sh` or `company/scripts/ceo/run-afternoon.sh`.
+6. Run `company/scripts/quote.sh '셀트리온' 'HLB펩'` when you want on-demand price and volume data.
+7. Point GitHub Pages at `company/output/` after committing to a repository.
 
 Ledger update example:
 

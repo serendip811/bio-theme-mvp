@@ -10,6 +10,7 @@ DATE_STR="$(date +%F)"
 REPORT_PATH="$COMPANY_DIR/reports/afternoon/${DATE_STR}.md"
 PROMPT_PATH="$COMPANY_DIR/state/ceo-afternoon-prompt.txt"
 
+"$SCRIPT_DIR/refresh-source-notes.sh"
 "$SCRIPT_DIR/employees/run-news.sh" afternoon
 "$SCRIPT_DIR/employees/run-chart.sh" afternoon
 "$SCRIPT_DIR/employees/run-strategy.sh" afternoon

@@ -7,12 +7,14 @@ PYTHON_BIN=/usr/bin/python3
 # DISCORD_WEBHOOK_URL=https://discordapp.com/api/webhooks/...
 
 # Morning employee and CEO cycle
+15 8 * * 1-5 /Users/seren/workspace/random/company/scripts/refresh-source-notes.sh >> /Users/seren/workspace/random/company/logs/news.log 2>&1
 20 8 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-news.sh morning >> /Users/seren/workspace/random/company/logs/news.log 2>&1
 25 8 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-chart.sh morning >> /Users/seren/workspace/random/company/logs/chart.log 2>&1
 30 8 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-strategy.sh morning >> /Users/seren/workspace/random/company/logs/strategy.log 2>&1
 50 8 * * 1-5 /Users/seren/workspace/random/company/scripts/ceo/run-morning.sh >> /Users/seren/workspace/random/company/logs/ceo.log 2>&1
 
 # Afternoon employee and CEO cycle
+5 15 * * 1-5 /Users/seren/workspace/random/company/scripts/refresh-source-notes.sh >> /Users/seren/workspace/random/company/logs/news.log 2>&1
 10 15 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-news.sh afternoon >> /Users/seren/workspace/random/company/logs/news.log 2>&1
 15 15 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-chart.sh afternoon >> /Users/seren/workspace/random/company/logs/chart.log 2>&1
 20 15 * * 1-5 /Users/seren/workspace/random/company/scripts/employees/run-strategy.sh afternoon >> /Users/seren/workspace/random/company/logs/strategy.log 2>&1
