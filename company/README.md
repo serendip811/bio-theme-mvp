@@ -28,7 +28,8 @@ Quick start:
 8. Run `company/scripts/refresh-watchlist-fundamentals.sh` to fetch market cap and basic financials for watchlist names.
 9. Run `company/scripts/refresh-pipeline-context.sh` to build next-milestone and pipeline-risk notes.
 10. Run `company/scripts/refresh-global-context.sh` to collect global biotech precedent headlines.
-11. Point GitHub Pages at `company/output/` after committing to a repository.
+11. Run `company/scripts/refresh-regulatory-context.sh` to collect more official FDA/EMA-style regulatory headlines where available.
+12. Point GitHub Pages at `company/output/` after committing to a repository.
 
 Publication behavior:
 - `company/scripts/ceo/run-morning.sh` auto-commits and pushes refreshed report artifacts after a successful run.

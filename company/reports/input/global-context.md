@@ -1,6 +1,6 @@
 # Global Context
 
-- 생성 시각: 2026-03-30T22:01:48+09:00
+- 생성 시각: 2026-03-30T22:14:33+09:00
 - 활성 테마: biosimilar, adc, obesity, cdmo, cell_therapy
 
 ## biosimilar

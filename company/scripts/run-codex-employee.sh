@@ -23,6 +23,7 @@ WATCHLIST_PATH="$COMPANY_DIR/reports/input/watchlist.md"
 FUNDAMENTALS_PATH="$COMPANY_DIR/reports/input/fundamentals.md"
 PIPELINE_CONTEXT_PATH="$COMPANY_DIR/reports/input/pipeline-context.md"
 GLOBAL_CONTEXT_PATH="$COMPANY_DIR/reports/input/global-context.md"
+REGULATORY_CONTEXT_PATH="$COMPANY_DIR/reports/input/regulatory-context.md"
 
 with_lock "$EMPLOYEE"
 
@@ -61,6 +62,9 @@ $(cat "$PIPELINE_CONTEXT_PATH")
 
 해외 사례 컨텍스트:
 $(cat "$GLOBAL_CONTEXT_PATH")
+
+규제/임상 정밀 컨텍스트:
+$(cat "$REGULATORY_CONTEXT_PATH")
 
 참고 장부 요약:
 $(cat "$COMPANY_DIR/portfolio/performance.json")

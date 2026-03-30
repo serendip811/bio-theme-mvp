@@ -16,6 +16,7 @@ PROMPT_PATH="$COMPANY_DIR/state/ceo-afternoon-prompt.txt"
 "$SCRIPT_DIR/refresh-watchlist-fundamentals.sh"
 "$SCRIPT_DIR/refresh-pipeline-context.sh"
 "$SCRIPT_DIR/refresh-global-context.sh"
+"$SCRIPT_DIR/refresh-regulatory-context.sh"
 "$SCRIPT_DIR/employees/run-chart.sh" afternoon
 "$SCRIPT_DIR/employees/run-fundamental.sh" afternoon
 "$SCRIPT_DIR/employees/run-pipeline.sh" afternoon
@@ -50,6 +51,9 @@ $(cat "$COMPANY_DIR/employees/pipeline/latest.md")
 해외 사례 담당 결과:
 $(cat "$COMPANY_DIR/employees/global/latest.md")
 
+규제/임상 정밀 컨텍스트:
+$(cat "$COMPANY_DIR/reports/input/regulatory-context.md")
+
 장부 담당 결과:
 $(cat "$COMPANY_DIR/employees/bookkeeper/latest.md")
 
@@ -64,11 +68,13 @@ $(cat "$COMPANY_DIR/reports/input/watchlist.md")
 - 강했던 종목과 실패한 종목
 - 내일 관찰 후보
 - 누적 손익 요약
+- 파이프라인 / 해외 선행사례 / 규제 신호 요약
 
 추가 제약:
 - 라이브 웹 검색을 하지 않는다.
 - 위에 제공된 직원 결과와 장부 정보만 사용한다.
 - 비어 있는 정보는 '데이터 미입력'으로 표시한다.
+- 파이프라인 진척, 해외 선행사례, 규제 신호가 당일 해석을 강화했는지 약화했는지 3줄 이내로 정리한다.
 
 최종 답변만 Markdown으로 출력하세요.
 EOF
