@@ -1,7 +1,7 @@
 {
   "employee": "news",
-  "last_run_at": "2026-03-30T13:23:18+09:00",
+  "last_run_at": "2026-03-30T19:37:33+09:00",
   "last_status": "success",
-  "last_output": "/Users/seren/workspace/random/company/reports/raw/2026-03-30-news-morning.md",
+  "last_output": "/Users/seren/workspace/random/company/reports/raw/2026-03-30-news-afternoon.md",
   "last_error": null
 }
