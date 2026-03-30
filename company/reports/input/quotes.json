@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-30T21:44:06+09:00",
+  "updated_at": "2026-03-30T21:48:32+09:00",
   "items": [
     {
       "name": "셀트리온",
@@ -18,22 +18,6 @@
       "source_url": "https://finance.naver.com/item/main.naver?code=068270"
     },
     {
-      "name": "HLB펩",
-      "code": "196300",
-      "current_price": 7260,
-      "previous_close": 7210,
-      "change": 50,
-      "change_direction": "상승",
-      "change_rate": 0.69,
-      "open": 7310,
-      "high": 7330,
-      "low": 7070,
-      "gap_rate": 1.39,
-      "volume": 8654,
-      "trading_value_million_krw": 63,
-      "source_url": "https://finance.naver.com/item/main.naver?code=196300"
-    },
-    {
       "name": "차백신연구소",
       "code": "261780",
       "current_price": 3800,
@@ -48,6 +32,22 @@
       "volume": 4339922,
       "trading_value_million_krw": 16946,
       "source_url": "https://finance.naver.com/item/main.naver?code=261780"
+    },
+    {
+      "name": "HLB펩",
+      "code": "196300",
+      "current_price": 7260,
+      "previous_close": 7210,
+      "change": 50,
+      "change_direction": "상승",
+      "change_rate": 0.69,
+      "open": 7310,
+      "high": 7330,
+      "low": 7070,
+      "gap_rate": 1.39,
+      "volume": 8654,
+      "trading_value_million_krw": 63,
+      "source_url": "https://finance.naver.com/item/main.naver?code=196300"
     },
     {
       "name": "HLB",

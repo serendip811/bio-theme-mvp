@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-03-30T21:44:03+09:00",
+  "updated_at": "2026-03-30T21:48:30+09:00",
   "symbols": [
     "셀트리온",
-    "HLB펩",
     "차백신연구소",
+    "HLB펩",
     "HLB",
     "한미약품"
   ],
@@ -23,6 +23,19 @@
       "trading_value_million_krw": 83252
     },
     {
+      "name": "차백신연구소",
+      "code": "261780",
+      "score": 34,
+      "reasons": [
+        "뉴스 브리핑 5회",
+        "소스 노트 2회",
+        "직접 재료 3개",
+        "거래대금 유의미"
+      ],
+      "market_cap_okr": 1020,
+      "trading_value_million_krw": 16946
+    },
+    {
       "name": "HLB펩",
       "code": "196300",
       "score": 33,
@@ -34,19 +47,6 @@
       ],
       "market_cap_okr": 674,
       "trading_value_million_krw": 63
-    },
-    {
-      "name": "차백신연구소",
-      "code": "261780",
-      "score": 31,
-      "reasons": [
-        "뉴스 브리핑 4회",
-        "소스 노트 2회",
-        "직접 재료 3개",
-        "거래대금 유의미"
-      ],
-      "market_cap_okr": 1020,
-      "trading_value_million_krw": 16946
     },
     {
       "name": "HLB",

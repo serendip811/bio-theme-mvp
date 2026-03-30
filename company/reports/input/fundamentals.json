@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-30T21:44:08+09:00",
+  "updated_at": "2026-03-30T21:48:34+09:00",
   "items": [
     {
       "name": "셀트리온",
@@ -33,35 +33,6 @@
       "source_url": "https://finance.naver.com/item/main.naver?code=068270"
     },
     {
-      "name": "HLB펩",
-      "code": "196300",
-      "market_cap_okr": 674.0,
-      "listed_shares": 9293398.0,
-      "foreign_ratio": 2.0,
-      "debt_ratio": 144.7,
-      "quick_ratio": 120.91,
-      "reserve_ratio": 360.82,
-      "per": -9.15,
-      "pbr": 2.88,
-      "sales_okr": 12.0,
-      "operating_income_okr": -14.0,
-      "net_income_okr": -21.0,
-      "latest_quarter_label": "2025.09",
-      "financial_strength": [
-        "매출 12억",
-        "영업이익 -14억",
-        "순이익 -21억"
-      ],
-      "interpretation_flags": [
-        "영업적자 상태",
-        "부채비율 경계"
-      ],
-      "cash_like_assets_okr": null,
-      "debt_total_okr": null,
-      "financing_risk_flags": [],
-      "source_url": "https://finance.naver.com/item/main.naver?code=196300"
-    },
-    {
       "name": "차백신연구소",
       "code": "261780",
       "market_cap_okr": 1020.0,
@@ -90,6 +61,35 @@
       "debt_total_okr": null,
       "financing_risk_flags": [],
       "source_url": "https://finance.naver.com/item/main.naver?code=261780"
+    },
+    {
+      "name": "HLB펩",
+      "code": "196300",
+      "market_cap_okr": 674.0,
+      "listed_shares": 9293398.0,
+      "foreign_ratio": 2.0,
+      "debt_ratio": 144.7,
+      "quick_ratio": 120.91,
+      "reserve_ratio": 360.82,
+      "per": -9.15,
+      "pbr": 2.88,
+      "sales_okr": 12.0,
+      "operating_income_okr": -14.0,
+      "net_income_okr": -21.0,
+      "latest_quarter_label": "2025.09",
+      "financial_strength": [
+        "매출 12억",
+        "영업이익 -14억",
+        "순이익 -21억"
+      ],
+      "interpretation_flags": [
+        "영업적자 상태",
+        "부채비율 경계"
+      ],
+      "cash_like_assets_okr": null,
+      "debt_total_okr": null,
+      "financing_risk_flags": [],
+      "source_url": "https://finance.naver.com/item/main.naver?code=196300"
     },
     {
       "name": "HLB",
