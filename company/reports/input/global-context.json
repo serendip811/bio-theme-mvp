@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-03-30T22:14:33+09:00",
+  "updated_at": "2026-03-31T08:51:01+09:00",
   "themes": [
     "biosimilar",
     "adc",
@@ -53,16 +53,16 @@
     {
       "theme": "biosimilar",
       "query": "biosimilar Europe approval biotech",
-      "title": "Celltrion launches biosimilar Stoboclo-Osenvelt in Europe",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBJd09pa2FrYUF6WklENTdLRy1wd1c0MnpiLTJjSTF4WWxldkw4dXh5WU1fSkRMcjZCWEg0YndRaUVXS0pXblFWNkVQbEk1SXp5QkRLMnJQaWtjdw?oc=5",
-      "published_at": "2025-12-22T17:00:00+09:00"
+      "title": "EMA set to simplify biosimilar approval",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQY2hwcjRsQnpXR3BNWDlHVXhJRjFkaUZIZTFUb3dYdjR4cXMxRjRLWWdYakZhTDlXTVY3cUxTQUlta0NEdVNubnQwenlTT1ZGUmFGSkZ1aXJOYTMyRS0tMmNDZTM0ODNiNk5CQ0xEd25oMmJTYi1kYlhGNjhET0tpaUtPV0U4UHk4bkE0TWZ0NHo?oc=5",
+      "published_at": "2025-04-02T16:00:00+09:00"
     },
     {
       "theme": "biosimilar",
       "query": "biosimilar Europe approval biotech",
-      "title": "EMA set to simplify biosimilar approval",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQY2hwcjRsQnpXR3BNWDlHVXhJRjFkaUZIZTFUb3dYdjR4cXMxRjRLWWdYakZhTDlXTVY3cUxTQUlta0NEdVNubnQwenlTT1ZGUmFGSkZ1aXJOYTMyRS0tMmNDZTM0ODNiNk5CQ0xEd25oMmJTYi1kYlhGNjhET0tpaUtPV0U4UHk4bkE0TWZ0NHo?oc=5",
-      "published_at": "2025-04-02T16:00:00+09:00"
+      "title": "Alvotech stock advances on biosimilar approvals and capacity expansion amid strong biotech momentum",
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNUmwtTmkwbTBqR0xKY090TXAtN0ZwX1RIczNQYnhtX09TaG01MjNmS3VuMjJRWXlrTndVWGJMSEdFdGw0aXlMbkN6UHZxVW9xZDduOVV4ZEcwZk5pVzM4Um9WTGlqeTlnTkdQdE5QNzFYZE1pVmFzTnU3enpBT3FLOEpRQjVsZXJvOEtvZUJMSnlkV1Rzb2U3SEc4b011M1psUFBpanJQcURwcW95Mzc4MF96S0Q2dVlnbkM4VXZNZVdKUmp5MnAwQg?oc=5",
+      "published_at": "2026-03-21T20:14:56+09:00"
     },
     {
       "theme": "adc",
@@ -70,6 +70,13 @@
       "title": "Patient deaths prompt partial hold for Daiichi-Merck's global phase 3 ADC program",
       "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTHFYUU1QVlJjNl9Nc2otMzlyTFprYVRweWk1VGFTSXhqSUxvWnRmRzVzWlFHaEdXbnJfbVhWWmo4RV9oRzA2cEpvZnlfWFUxckFsdzNIcEdmQ09FdkJJWDh2M0REQ1VVTlFVRU1PQlkwQVFIZXVHd1BScTBzMmZ1YUlGVUhFT0xGMk1yUE1wdHJIZC1CcjdMa1RfRi1BVUItV2NSbXE4aEVkQnN6WERISWFOY0M?oc=5",
       "published_at": "2025-12-18T17:00:00+09:00"
+    },
+    {
+      "theme": "adc",
+      "query": "ADC biotech approval trial failure",
+      "title": "Fierce Pharma Asia—FDA safety probe of Takeda drug; Otsuka kidney disease nod; ADC patent fight",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUm5HYnpSZGNIMTFoZ2Y1d2JyQm5hQVF6LTZKOTVkdWZXUHI3WG1CX0dZdDU5d1NId3g1SzFQdGRNT2s1V2c5VE9QcEpNNzE5ZGRqV3pHNEtOb1czMlRELVJmX0JEWDNuMS1BMk5Ga2JlaVFiT2xkMzlwWjZrQlpYSHJYcHFyMWlwanlram9Nd2hnYmYweDZqLTlHRjhjR2VZbkgyVW1UdkppUjg?oc=5",
+      "published_at": "2025-12-05T17:00:00+09:00"
     },
     {
       "theme": "adc",
@@ -84,13 +91,6 @@
       "title": "Daiichi, Merck pull HER3-DXd filing at FDA after confirmatory trial misses survival endpoint",
       "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQNG9VcU0wRXk3V0dMU2k4S0RmTndmS1lmQXdlUERsbVdQdmhJOGwyZzlJWnVwSGs3VWh6OFZIWVMtLVJKNTNBcy1VMWI5cHZPaG5IUzdiNHpEbmd1cTJ3NnVRaDBrRzN6TUlJcTdmcnFzd0hkZ3NzaHlRR2VCZFRuVTk4NXo0dm1kWG8xUnFSX0xRLUh0MFN1MzQwUTFENFFFVEJleE00YVJZbmdlT0xORG9WNjVGY1NHQVRVcEFBQ0dOM0RW?oc=5",
       "published_at": "2025-05-29T16:00:00+09:00"
-    },
-    {
-      "theme": "adc",
-      "query": "ADC biotech approval trial failure",
-      "title": "Fierce Pharma Asia—Approvals for Innovent, Dizal; BMS partner's bispecific ADC readout",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNZkdCeFM2eDdpNTNYSWw3VWFwSUpxckJHYThDVVZncHVydWpuYlpvZ0RTZUQtZUZGUFNQc0wwUTZUMFdVM1R3Xy1aQ0E5ellyNjBDMFcxS004OGdNa0FoTnlWZl9NR0RmMk9kbHpmUUxtY2RENEFqMUl2V1QwbkZWSlpmRTdhMXJjNklteklnMmg0b0RubFVDWExjWQ?oc=5",
-      "published_at": "2025-07-10T16:00:00+09:00"
     },
     {
       "theme": "adc",
@@ -123,9 +123,9 @@
     {
       "theme": "obesity",
       "query": "obesity biotech trial approval",
-      "title": "Aardvark halts obesity trials, putting entire pipeline on pause",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVzhQa2dBOWpFaHJjRWtQTUpkMGNaWEczV1MyaUJTT21JRWdqcldpVUtfaGpYN2RmeS1NenBHMU5FcVlHWVgxTHRqUVlrQklxa19PS1hfMkprby1UQ2pQLWZCS2lzdHBwQzRQUEFrQWhjQUlPM19kbmZGT3FLVVdVeldvXzJ0U0hfZnhwRDJrbTltV0UzOHp2cGpwc2VzdkdJdVkxVTVTbVNEWGc?oc=5",
-      "published_at": "2026-03-24T17:00:00+09:00"
+      "title": "Kailera plots IPO to fund obesity pipeline after one of the biggest raises of 2025",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRGJWRWVLcjFKUUViM3Z0OEt5OWpsXzBMRHNxOUFOVFJKa2d2UFdFSnpnN2VFc2N4ZDloUGM3cTMtdGxpN2MyMThHM3RTRXptREF2NkducXFEaVRvMExLMnhPMEdfWFdRM2VweVpHQnFQMC05NXhjdjJEMW9tdThFeFctMl9fQlloUmI1MFh6SFBVLVJGd3RfR082YnZ3LXZkdmJKTXdtWXh5OUk?oc=5",
+      "published_at": "2026-03-30T16:45:13+09:00"
     },
     {
       "theme": "obesity",
@@ -172,9 +172,9 @@
     {
       "theme": "obesity",
       "query": "GLP-1 biotech licensing deal",
-      "title": "GLP-1 pills, immunology, and China, oh my: JPM 2026",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQN3RDUmliQjJzVjVBNmVWMGR3S1VERWpOdWhkOXhSbTIzR2RuaHB4bWFXNUlHcDhETTNjY1hIZTBFdG41bHlMYmFTekVvMnc5OFdWbkdtVHp3ZWhkd2RabEhreFJUaldLUEhfQktFeUN4SmFQMXlGT2VBcnk4WXFVMllsZFRtR29TRndISzM0Z1dlWl82NFBwc1JBUGQ1Vm5CY0YzQnJUS2NoUFZfNW5BR2JhZEpkYXhHVHRYdk13?oc=5",
-      "published_at": "2026-01-16T17:00:00+09:00"
+      "title": "Pfizer Turns to China for Trial Weight Loss Drug. Congress Is Worried About Chinese Biotechs.",
+      "link": "https://news.google.com/rss/articles/CBMipANBVV95cUxQOFlScS1DZDVPWVQwR00wQ0NjUjhaQjBNYVI5T1lTb3NRTHB2bHUtYmFUcmhuaDlfekYxS0ZqNXNKcDBhRm9HbFRKNEM3V2hqX1h4NVZOT2pwbFBCcHdRRGQtWEVRZmVvSVp5VnNnRjUwNllvOEx6Zl9vZVBEQnZGb2psVjExdkNWMG5VTkJlN01HbGhfVHo4aU5zR3ZRSWwzTVlWeEFfV0t2VG55cXhuTEx5QTZsVjM4dGFKYlFWQUV4OG9CLXc4WkF0RENFRFg4NmNBenE0aUtGMnZrbGJIT2h2TlBhYWNubnJkU0ROQy13VlJLaWwwOWJOMFgyNl9rbmI1elR3TzJ5WkFBTUNObmFjSFB0MndNcWU1N2YyT3QtMFRsYzlOVmxUaUFldl8zOG5iYlctMG5nRno0b3UzWmFWM0V6RG5EOU5Wc0NZdER3UlZRTThjRGY5Rm1CeVc0YXNVVEFlTHJBTWpvR19velVJWkt5R3dtSkEwUVRxVV9FQ0VBel9FVXBSVkJ5LUdCWld3QzBoWDc2ZDFmajhxak9pZHA?oc=5",
+      "published_at": "2025-12-09T17:00:00+09:00"
     },
     {
       "theme": "cdmo",

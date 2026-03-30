@@ -1,6 +1,6 @@
 # Regulatory Context
 
-- 생성 시각: 2026-03-30T22:14:35+09:00
+- 생성 시각: 2026-03-31T08:51:05+09:00
 - 항목 수: 11
 
 ## biosimilar
@@ -14,10 +14,10 @@
 - [official-search] FDA grants accelerated approval to loncastuximab tesirine-lpyl for large B-cell lymphoma - fda.gov | 2021-04-23T16:00:00+09:00
 
 ## obesity
-- [official-search] This label may not be the latest approved by FDA. For current labeling information, please visit https://www.fda.gov/drugsatfda - accessdata.fda.gov | 2022-05-25T07:09:36+09:00
 - [official-search] FDA Approves Fourth Product Under National Priority Voucher Program, Higher Dose Semaglutide - fda.gov | 2026-03-19T16:00:00+09:00
+- [official-search] HIGHLIGHTS OF PRESCRIBING INFORMATION These highlights do not include all the information needed to use MOUNJARO safely and effe - accessdata.fda.gov | 2022-05-25T07:09:36+09:00
 - [official-search] FDA Approves New Medication for Chronic Weight Management - fda.gov | 2023-11-08T17:00:00+09:00
 
 ## cell_therapy
 - [official-search] U.S. Food and Drug Administration - fda.gov | 2006-06-24T13:02:30+09:00
-- [official-search] Pyrogen and Endotoxins Testing: Questions and Answers - fda.gov | 2026-03-18T17:45:00+09:00
+- [official-search] FDA Requests Sarepta Therapeutics Suspend Distribution of Elevidys and Places Clinical Trials on Hold for Multiple Gene Therapy Products Following 3 Deaths - fda.gov | 2025-07-18T16:00:00+09:00
