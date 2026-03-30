@@ -58,14 +58,14 @@ def md_to_html(text: str) -> str:
     return "\n".join(blocks)
 
 
-def page(title: str, body: str) -> str:
+def page(title: str, body: str, stylesheet_href: str) -> str:
     return f"""<!DOCTYPE html>
 <html lang=\"ko\">
 <head>
   <meta charset=\"utf-8\">
   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
   <title>{html.escape(title)}</title>
-  <link rel=\"stylesheet\" href=\"/assets/styles.css\">
+  <link rel=\"stylesheet\" href=\"{html.escape(stylesheet_href)}\">
 </head>
 <body>
   <main class=\"page\">
@@ -83,9 +83,9 @@ def build_report_page(kind: str, report_date: str):
     else:
         label = "오전 보고" if kind == "morning" else "오후 보고"
         content = f"# {label}\n\n- 아직 생성되지 않았습니다.\n- `company/reports/templates/{kind}-template.md`를 기준으로 대표 보고를 생성하세요."
-    body = f"<nav><a href=\"/index.html\">Home</a> <a href=\"/portfolio/index.html\">Portfolio</a></nav>{md_to_html(content)}"
+    body = f"<nav><a href=\"../index.html\">Home</a> <a href=\"../portfolio/index.html\">Portfolio</a></nav>{md_to_html(content)}"
     target = OUTPUT_DIR / kind / f"{report_date}.html"
-    target.write_text(page(f"{kind} report {report_date}", body), encoding="utf-8")
+    target.write_text(page(f"{kind} report {report_date}", body, "../assets/styles.css"), encoding="utf-8")
 
 
 def format_money(value):
@@ -126,7 +126,7 @@ def build_portfolio_page():
         trade_rows.append("<tr><td colspan='5'>최근 거래가 없습니다.</td></tr>")
 
     body = f"""
-    <nav><a href=\"/index.html\">Home</a></nav>
+    <nav><a href=\"../index.html\">Home</a></nav>
     <h1>포트폴리오 현황</h1>
     <section class=\"cards\">
       <article class=\"card\"><strong>현금</strong><span>{format_money(performance.get('cash', 0))}</span></article>
@@ -145,7 +145,7 @@ def build_portfolio_page():
       <tbody>{''.join(trade_rows)}</tbody>
     </table>
     """
-    (OUTPUT_DIR / "portfolio" / "index.html").write_text(page("Portfolio", body), encoding="utf-8")
+    (OUTPUT_DIR / "portfolio" / "index.html").write_text(page("Portfolio", body, "../assets/styles.css"), encoding="utf-8")
 
 
 def build_index(report_date: str):
@@ -153,12 +153,12 @@ def build_index(report_date: str):
     <h1>국내 바이오 테마 운영 대시보드</h1>
     <p>기준일: {html.escape(report_date)}</p>
     <section class=\"cards\">
-      <a class=\"card link\" href=\"/morning/{html.escape(report_date)}.html\">오전 보고</a>
-      <a class=\"card link\" href=\"/afternoon/{html.escape(report_date)}.html\">오후 보고</a>
-      <a class=\"card link\" href=\"/portfolio/index.html\">포트폴리오 현황</a>
+      <a class=\"card link\" href=\"morning/{html.escape(report_date)}.html\">오전 보고</a>
+      <a class=\"card link\" href=\"afternoon/{html.escape(report_date)}.html\">오후 보고</a>
+      <a class=\"card link\" href=\"portfolio/index.html\">포트폴리오 현황</a>
     </section>
     """
-    (OUTPUT_DIR / "index.html").write_text(page("Bio Theme Board", body), encoding="utf-8")
+    (OUTPUT_DIR / "index.html").write_text(page("Bio Theme Board", body, "assets/styles.css"), encoding="utf-8")
 
 
 def main():
