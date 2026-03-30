@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+*.pyc
+company/logs/
+company/state/*.txt
+company/state/locks/

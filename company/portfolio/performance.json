@@ -1,0 +1,10 @@
+{
+  "updated_at": null,
+  "cash": 0,
+  "invested_amount": 0,
+  "market_value": 0,
+  "realized_pnl": 0,
+  "unrealized_pnl": 0,
+  "total_pnl": 0,
+  "total_return": 0
+}
