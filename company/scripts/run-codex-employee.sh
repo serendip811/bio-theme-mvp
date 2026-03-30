@@ -19,6 +19,7 @@ OUTPUT_PATH="$COMPANY_DIR/reports/raw/${DATE_STR}-${EMPLOYEE}-${SHIFT}.md"
 PROMPT_PATH="$COMPANY_DIR/state/${EMPLOYEE}-${SHIFT}-prompt.txt"
 SOURCE_NOTES_PATH="$COMPANY_DIR/reports/input/daily-source-notes.md"
 MARKET_SNAPSHOT_PATH="$COMPANY_DIR/reports/input/market-snapshot.md"
+WATCHLIST_PATH="$COMPANY_DIR/reports/input/watchlist.md"
 
 with_lock "$EMPLOYEE"
 
@@ -45,6 +46,9 @@ $(cat "$SOURCE_NOTES_PATH")
 
 시장 스냅샷:
 $(cat "$MARKET_SNAPSHOT_PATH")
+
+감시 종목:
+$(cat "$WATCHLIST_PATH")
 
 참고 장부 요약:
 $(cat "$COMPANY_DIR/portfolio/performance.json")

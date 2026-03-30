@@ -12,6 +12,7 @@ PROMPT_PATH="$COMPANY_DIR/state/ceo-afternoon-prompt.txt"
 
 "$SCRIPT_DIR/refresh-source-notes.sh"
 "$SCRIPT_DIR/employees/run-news.sh" afternoon
+"$SCRIPT_DIR/refresh-watchlist-quotes.sh"
 "$SCRIPT_DIR/employees/run-chart.sh" afternoon
 "$SCRIPT_DIR/employees/run-strategy.sh" afternoon
 "$SCRIPT_DIR/employees/run-bookkeeper.sh" afternoon
@@ -36,6 +37,12 @@ $(cat "$COMPANY_DIR/employees/strategy/latest.md")
 
 장부 담당 결과:
 $(cat "$COMPANY_DIR/employees/bookkeeper/latest.md")
+
+시장 스냅샷:
+$(cat "$COMPANY_DIR/reports/input/market-snapshot.md")
+
+감시 종목:
+$(cat "$COMPANY_DIR/reports/input/watchlist.md")
 
 반드시 포함할 것:
 - 당일 시장 반응

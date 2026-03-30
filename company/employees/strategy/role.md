@@ -12,5 +12,6 @@ Output requirements:
 Expected sections:
 - 오늘 액션 아이디어
 - 관찰 우선순위
+- 추천 구분
 - 리스크 체크
 - 내일 계획

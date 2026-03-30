@@ -99,16 +99,20 @@ def parse_quote(code: str):
     rate = to_number(change_rate)
     if "하락" in direction_text:
         rate *= -1
+    previous_close = int(to_number(current) - signed_change)
+    gap = ((int(to_number(open_price)) - previous_close) / previous_close * 100) if previous_close else 0.0
     return {
         "name": name,
         "code": code,
         "current_price": int(to_number(current)),
+        "previous_close": previous_close,
         "change": int(signed_change),
         "change_direction": direction_text,
         "change_rate": round(rate, 2),
         "open": int(to_number(open_price)),
         "high": int(to_number(high)),
         "low": int(to_number(low)),
+        "gap_rate": round(gap, 2),
         "volume": int(to_number(volume)),
         "trading_value_million_krw": int(to_number(trading_value)),
         "source_url": NAVER_URL.format(code=code),
@@ -133,7 +137,9 @@ def build_snapshot(items):
             [
                 f"## {item['name']} ({item['code']})",
                 f"- 현재가: {item['current_price']:,}",
+                f"- 전일 종가: {item['previous_close']:,}",
                 f"- 전일대비: {item['change']:+,} ({item['change_rate']:+.2f}%)",
+                f"- 시가 갭: {item['gap_rate']:+.2f}%",
                 f"- 시가/고가/저가: {item['open']:,} / {item['high']:,} / {item['low']:,}",
                 f"- 거래량: {item['volume']:,}",
                 f"- 거래대금: {item['trading_value_million_krw']:,}백만 원",
@@ -146,13 +152,28 @@ def build_snapshot(items):
 
 def main():
     parser = argparse.ArgumentParser(description="Fetch on-demand market quotes for Korea stocks")
-    parser.add_argument("symbols", nargs="+", help="Stock names or 6-digit codes")
+    parser.add_argument("symbols", nargs="*", help="Stock names or 6-digit codes")
+    parser.add_argument("--watchlist-file", help="Path to watchlist json with symbols array")
     args = parser.parse_args()
 
     INPUT_DIR.mkdir(parents=True, exist_ok=True)
     symbols = load_symbols()
+    requested = list(args.symbols)
+    if args.watchlist_file:
+        watchlist_payload = json.loads(Path(args.watchlist_file).read_text(encoding="utf-8"))
+        requested.extend(watchlist_payload.get("symbols", []))
+    requested = [item for item in requested if item]
+    seen = set()
+    deduped = []
+    for item in requested:
+        if item in seen:
+            continue
+        seen.add(item)
+        deduped.append(item)
+    if not deduped:
+        raise SystemExit("조회할 종목이 없습니다")
     items = []
-    for query in args.symbols:
+    for query in deduped:
         resolved = resolve_symbol(query, symbols)
         quote = parse_quote(resolved["code"])
         items.append(quote)
